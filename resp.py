@@ -5,7 +5,7 @@ from utils import http_date
 
 def build_response(status_code, reason, body=b'', content_type='text/html', method='GET'):
 
-    body_length = len(body) if method == 'GET' else 0
+    body_length = len(body)
 
     headers = [
         f'HTTP/1.1 {status_code} {reason}',

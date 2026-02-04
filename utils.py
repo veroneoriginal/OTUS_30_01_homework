@@ -13,7 +13,9 @@ def safe_path(document_root, url_path):
     decoded_path = unquote(url_path)
     decoded_path = decoded_path.split('?', 1)[0]
 
-    if '..' in decoded_path:
+    parts = decoded_path.split('/')
+
+    if any(part == '..' for part in parts):
         return None
 
     decoded_path = decoded_path.lstrip('/')

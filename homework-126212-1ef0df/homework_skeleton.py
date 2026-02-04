@@ -1,4 +1,4 @@
-# # homework-126212-1ef0df/homework_skeleton.py
+# homework-126212-1ef0df/homework_skeleton.py
 #
 # import socket
 # import threading
