@@ -1,5 +1,9 @@
-# handler.py
-# обработка одного HTTP-запроса
+"""
+HTTP request handler.
+
+Модуль содержит функцию обработки одного HTTP-запроса.
+Поддерживаются методы GET и HEAD.
+"""
 
 import os
 from resp import build_response
@@ -8,7 +12,28 @@ from utils import safe_path, guess_content_type
 DOCUMENT_ROOT = './www'
 
 
+# pylint: disable=too-many-return-statements
+# pylint: disable=too-many-return-statements, no-else-return
 def handle_request(client_socket):
+    """
+    Обрабатывает один HTTP-запрос клиента.
+
+    Функция:
+    - читает данные из сокета
+    - парсит стартовую строку HTTP-запроса
+    - проверяет корректность метода
+    - определяет безопасный путь внутри DOCUMENT_ROOT
+    - формирует и отправляет HTTP-ответ
+
+    Поддерживаемые методы:
+    - GET
+    - HEAD
+
+    Неподдерживаемые методы возвращают 405 Method Not Allowed.
+
+    :param client_socket: сокет, подключённый к клиенту
+    """
+
     try:
         data = client_socket.recv(4096)
         if not data:

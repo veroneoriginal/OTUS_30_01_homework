@@ -1,6 +1,7 @@
 # httpd.py
-
-# ТОЧКА ВХОДА
+"""
+ТОЧКА ВХОДА
+"""
 
 
 from server import start_server
