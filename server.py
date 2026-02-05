@@ -10,7 +10,7 @@ TCP HTTP server.
 
 import socket
 import threading
-from handler import handle_request
+from http_server.connection import handle_request
 
 HOST = 'localhost'
 PORT = 8080

@@ -1,2 +1,2 @@
 [MASTER]
-ignore=http-test-suite,www
+ignore=http-test-suite,www,test_http_server
