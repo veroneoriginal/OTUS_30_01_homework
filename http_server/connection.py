@@ -25,6 +25,7 @@ def handle_request(client_socket):
     """
     try:
         data = client_socket.recv(4096)
+        print("Пришел request: ", data)
         if not data:
             return
 

@@ -15,12 +15,12 @@ HTTP-запросов уровня приложения.
 Модуль НЕ работает с сокетами и не занимается сетевым вводом/выводом.
 """
 
-
 import os
 from resp import build_response
 from utils import safe_path, guess_content_type
 
 DOCUMENT_ROOT = './www'
+
 
 # pylint: disable=too-few-public-methods
 class HttpHandler:

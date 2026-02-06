@@ -22,6 +22,7 @@ def start_server():
 
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    # server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
 
     server_socket.bind((HOST, PORT))
     server_socket.listen(5)
